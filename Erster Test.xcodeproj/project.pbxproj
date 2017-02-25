@@ -23,6 +23,10 @@
 		265441931E61E7DD003488C1 /* ArrayCategoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441921E61E7DD003488C1 /* ArrayCategoryResource.swift */; };
 		265441951E61EB41003488C1 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441941E61EB41003488C1 /* CategoryViewController.swift */; };
 		265441971E6207AE003488C1 /* CategorySelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441961E6207AE003488C1 /* CategorySelectionDelegate.swift */; };
+		2654419B1E621063003488C1 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654419A1E621063003488C1 /* Expense.swift */; };
+		2654419D1E6218AB003488C1 /* ExpenseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654419C1E6218AB003488C1 /* ExpenseListViewController.swift */; };
+		265441A01E621E6B003488C1 /* ExpenseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654419E1E621E6B003488C1 /* ExpenseViewCell.swift */; };
+		265441A11E621E6B003488C1 /* ExpenseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2654419F1E621E6B003488C1 /* ExpenseViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		265441941E61EB41003488C1 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		265441961E6207AE003488C1 /* CategorySelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionDelegate.swift; sourceTree = "<group>"; };
 		265441981E620EEE003488C1 /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = TODO.md; path = "Erster Test/TODO.md"; sourceTree = "<group>"; };
+		2654419A1E621063003488C1 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		2654419C1E6218AB003488C1 /* ExpenseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseListViewController.swift; sourceTree = "<group>"; };
+		2654419E1E621E6B003488C1 /* ExpenseViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseViewCell.swift; sourceTree = "<group>"; };
+		2654419F1E621E6B003488C1 /* ExpenseViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpenseViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 				2654418C1E61D94A003488C1 /* DummyViewController.swift */,
 				265441941E61EB41003488C1 /* CategoryViewController.swift */,
 				265441961E6207AE003488C1 /* CategorySelectionDelegate.swift */,
+				2654419C1E6218AB003488C1 /* ExpenseListViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -109,6 +118,7 @@
 				265441881E61D576003488C1 /* PayeeDelegate.swift */,
 				265441901E61E7AC003488C1 /* CategoryResource.swift */,
 				265441921E61E7DD003488C1 /* ArrayCategoryResource.swift */,
+				2654419A1E621063003488C1 /* Expense.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -117,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				265441681E6094DB003488C1 /* Main.storyboard */,
+				2654419E1E621E6B003488C1 /* ExpenseViewCell.swift */,
+				2654419F1E621E6B003488C1 /* ExpenseViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -193,6 +205,7 @@
 				2654416F1E6094DB003488C1 /* LaunchScreen.storyboard in Resources */,
 				2654416C1E6094DB003488C1 /* Assets.xcassets in Resources */,
 				2654416A1E6094DB003488C1 /* Main.storyboard in Resources */,
+				265441A11E621E6B003488C1 /* ExpenseViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,8 +216,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2654419B1E621063003488C1 /* Expense.swift in Sources */,
 				265441911E61E7AC003488C1 /* CategoryResource.swift in Sources */,
 				265441651E6094DB003488C1 /* AppDelegate.swift in Sources */,
+				265441A01E621E6B003488C1 /* ExpenseViewCell.swift in Sources */,
 				2654417B1E61A509003488C1 /* Category.swift in Sources */,
 				265441931E61E7DD003488C1 /* ArrayCategoryResource.swift in Sources */,
 				265441971E6207AE003488C1 /* CategorySelectionDelegate.swift in Sources */,
@@ -214,6 +229,7 @@
 				2654418B1E61D8D1003488C1 /* PayeeSelectionDelegate.swift in Sources */,
 				265441871E61ABAD003488C1 /* ArrayPayeeResource.swift in Sources */,
 				265441951E61EB41003488C1 /* CategoryViewController.swift in Sources */,
+				2654419D1E6218AB003488C1 /* ExpenseListViewController.swift in Sources */,
 				265441891E61D576003488C1 /* PayeeDelegate.swift in Sources */,
 				265441851E61AB32003488C1 /* PayeeResource.swift in Sources */,
 			);

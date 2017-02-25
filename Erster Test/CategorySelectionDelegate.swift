@@ -1,5 +1,5 @@
 //
-//  PayeeSelectionDelegate.swift
+//  CategorySelectionDelegate.swift
 //  Erster Test
 //
 //  Created by Gabriel Birke on 25.02.17.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol PayeeSelectionDelegate {
-    func payeeWasSelected(_ selectedPayee: Payee )
+protocol CategorySelectionDelegate {
+    func categoryWasSelected(_ selectedCategory: Category )
 }

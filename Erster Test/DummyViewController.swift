@@ -8,11 +8,13 @@
 
 import UIKit
 
-class DummyViewController: UIViewController, PayeeSelectionDelegate {
+class DummyViewController: UIViewController, PayeeSelectionDelegate, CategorySelectionDelegate {
 
     @IBOutlet weak var payeeNameText: UILabel!
+    @IBOutlet weak var categoryNameText: UILabel!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -23,9 +25,14 @@ class DummyViewController: UIViewController, PayeeSelectionDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func payeeWasSelected(_ payee: Payee) {
-        payeeNameText?.text = payee.name
+    func payeeWasSelected(_ selectedPayee: Payee) {
+        payeeNameText?.text = selectedPayee.name
         payeeNameText?.isHidden = false
+    }
+    
+    func categoryWasSelected(_ selectedCategory: Category) {
+        categoryNameText?.text = selectedCategory.name
+        categoryNameText?.isHidden = false
     }
 
     
@@ -36,8 +43,12 @@ class DummyViewController: UIViewController, PayeeSelectionDelegate {
             let dst = segue.destination as! PayeeViewController
             dst.payeeSelectionDelegate = self
         }
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "selectCategory" {
+            let dst = segue.destination as! CategoryViewController
+            dst.categorySelectionDelegate = self
+        }
+        
     }
     
 

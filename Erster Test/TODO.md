@@ -1,7 +1,6 @@
 # Next steps
 
 ## UI Overall
-- Add Category selection (with category headers)
 - Add Expense list
 - Add Expense entry
 

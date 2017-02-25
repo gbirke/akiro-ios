@@ -50,7 +50,7 @@ class PayeeViewController: UITableViewController, UISearchResultsUpdating {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.isActive && searchController.searchBar.text != "" {
-            return filteredPayees.count
+            return filteredPayees.count + 1
         }
         return payees.count
     }
@@ -60,12 +60,33 @@ class PayeeViewController: UITableViewController, UISearchResultsUpdating {
         let cell = tableView.dequeueReusableCell(withIdentifier: "payeeCell", for: indexPath)
         
         if searchController.isActive && searchController.searchBar.text != "" {
-            cell.textLabel?.text = filteredPayees[indexPath.row].name
+            if indexPath.row > 0 {
+                cell.textLabel?.text = filteredPayees[indexPath.row-1].name
+            } else {
+                cell.textLabel?.text = "Create \"\(searchController.searchBar.text!)\" payee"
+                cell.textLabel?.textColor = UIColor(red:0.09, green:0.81, blue:0.11, alpha:1.0) // green tint
+            }
+            
         } else {
             cell.textLabel?.text = payees[indexPath.row].name
+            cell.textLabel?.textColor = nil // Reset color to avoid 1st item being green when it's reused.
         }
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if searchController.isActive && searchController.searchBar.text != "" {
+            if indexPath.row > 0 {
+                print("selected payee \(filteredPayees[indexPath.row-1].name)")
+            } else {
+                print("Created payee \"\(searchController.searchBar.text!)\" ")
+            }
+            
+        } else {
+            print("selected payee \(payees[indexPath.row].name)")
+        }
+        let _ = navigationController?.popViewController(animated: true)
     }
     
 

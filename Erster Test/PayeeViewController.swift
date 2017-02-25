@@ -8,13 +8,18 @@
 
 import UIKit
 
-class PayeeViewController: UITableViewController {
+class PayeeViewController: UITableViewController, UISearchResultsUpdating {
     
-    var payees: [Payee]? {
+    var payees: [Payee] = [] {
         didSet {
             self.tableView.reloadData()
         }
     }
+    var filteredPayees = [Payee]()
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +27,11 @@ class PayeeViewController: UITableViewController {
         let payeeResource = ArrayPayeeResource()
         
         payees = payeeResource.getList()
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -39,18 +49,21 @@ class PayeeViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return payees?.count ?? 0
+        if searchController.isActive && searchController.searchBar.text != "" {
+            return filteredPayees.count
+        }
+        return payees.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "payeeCell", for: indexPath)
         
-        guard let payee = payees?[indexPath.row] else {
-            return cell
+        if searchController.isActive && searchController.searchBar.text != "" {
+            cell.textLabel?.text = filteredPayees[indexPath.row].name
+        } else {
+            cell.textLabel?.text = payees[indexPath.row].name
         }
-
-        cell.textLabel?.text = payee.name
 
         return cell
     }
@@ -101,4 +114,22 @@ class PayeeViewController: UITableViewController {
     }
     */
 
+    // MARK: - Search results
+    
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        filteredPayees = payees.filter { payee in
+            return payee.name.lowercased().contains(searchText.lowercased())
+        }
+        
+        tableView.reloadData()
+    }
+    
+    public func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchText: searchController.searchBar.text!)
+    }
+   
 }
+
+
+
+

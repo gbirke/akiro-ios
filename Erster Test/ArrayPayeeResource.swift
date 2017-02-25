@@ -26,4 +26,9 @@ class ArrayPayeeResource: PayeeResource {
         return payees
     }
     
+    func insert(withName: String) -> Payee {
+        let p = Payee(name: withName)
+        payees.append(p)
+        return p
+    }
 }

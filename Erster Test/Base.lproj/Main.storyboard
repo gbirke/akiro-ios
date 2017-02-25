@@ -38,10 +38,10 @@
             </objects>
             <point key="canvasLocation" x="2975" y="799"/>
         </scene>
-        <!--View Controller-->
+        <!--Dummy View Controller-->
         <scene sceneID="CPO-37-sxY">
             <objects>
-                <viewController id="zEj-9c-6vQ" sceneMemberID="viewController">
+                <viewController id="zEj-9c-6vQ" customClass="DummyViewController" customModule="Erster_Test" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a5z-Uo-Hmw"/>
                         <viewControllerLayoutGuide type="bottom" id="YjY-aH-5el"/>
@@ -55,13 +55,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Payee"/>
                                 <connections>
-                                    <segue destination="z0m-Nh-hDl" kind="show" id="rq9-Xe-5f6"/>
+                                    <segue destination="z0m-Nh-hDl" kind="show" identifier="selectPayee" id="rq9-Xe-5f6"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Payee Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVa-Jq-HEF">
+                                <rect key="frame" x="33" y="373" width="309" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="cVT-c5-Icw"/>
+                    <connections>
+                        <outlet property="payeeNameText" destination="UVa-Jq-HEF" id="DHU-vs-ZTS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbq-aO-HBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

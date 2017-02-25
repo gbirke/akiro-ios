@@ -1,5 +1,5 @@
 //
-//  PayeeResource.swift
+//  PayeeDelegate.swift
 //  Erster Test
 //
 //  Created by Gabriel Birke on 25.02.17.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-protocol PayeeResource {
-    func getList() -> [Payee]
-    func insert(withName: String) -> Payee
+protocol PayeeDelegate {
+    func addPayee(withName: String) -> Payee
 }

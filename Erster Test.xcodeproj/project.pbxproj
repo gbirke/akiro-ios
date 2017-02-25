@@ -16,6 +16,10 @@
 		265441811E61A73E003488C1 /* PayeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441801E61A73E003488C1 /* PayeeViewController.swift */; };
 		265441851E61AB32003488C1 /* PayeeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441841E61AB32003488C1 /* PayeeResource.swift */; };
 		265441871E61ABAD003488C1 /* ArrayPayeeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441861E61ABAD003488C1 /* ArrayPayeeResource.swift */; };
+		265441891E61D576003488C1 /* PayeeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441881E61D576003488C1 /* PayeeDelegate.swift */; };
+		2654418B1E61D8D1003488C1 /* PayeeSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654418A1E61D8D1003488C1 /* PayeeSelectionDelegate.swift */; };
+		2654418D1E61D94A003488C1 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654418C1E61D94A003488C1 /* DummyViewController.swift */; };
+		2654418F1E61E5F8003488C1 /* TODO.md in Sources */ = {isa = PBXBuildFile; fileRef = 2654418E1E61E5F8003488C1 /* TODO.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		265441801E61A73E003488C1 /* PayeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeViewController.swift; sourceTree = "<group>"; };
 		265441841E61AB32003488C1 /* PayeeResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeResource.swift; sourceTree = "<group>"; };
 		265441861E61ABAD003488C1 /* ArrayPayeeResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayPayeeResource.swift; sourceTree = "<group>"; };
+		265441881E61D576003488C1 /* PayeeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeDelegate.swift; sourceTree = "<group>"; };
+		2654418A1E61D8D1003488C1 /* PayeeSelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeSelectionDelegate.swift; sourceTree = "<group>"; };
+		2654418C1E61D94A003488C1 /* DummyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
+		2654418E1E61E5F8003488C1 /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +75,7 @@
 				265441771E61A322003488C1 /* Model */,
 				265441761E61A309003488C1 /* Controller */,
 				265441641E6094DB003488C1 /* AppDelegate.swift */,
+				2654418E1E61E5F8003488C1 /* TODO.md */,
 			);
 			path = "Erster Test";
 			sourceTree = "<group>";
@@ -75,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				265441801E61A73E003488C1 /* PayeeViewController.swift */,
+				2654418A1E61D8D1003488C1 /* PayeeSelectionDelegate.swift */,
+				2654418C1E61D94A003488C1 /* DummyViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -86,6 +97,7 @@
 				2654417E1E61A6F1003488C1 /* Payee.swift */,
 				265441841E61AB32003488C1 /* PayeeResource.swift */,
 				265441861E61ABAD003488C1 /* ArrayPayeeResource.swift */,
+				265441881E61D576003488C1 /* PayeeDelegate.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -184,7 +196,11 @@
 				2654417B1E61A509003488C1 /* Category.swift in Sources */,
 				2654417F1E61A6F1003488C1 /* Payee.swift in Sources */,
 				265441811E61A73E003488C1 /* PayeeViewController.swift in Sources */,
+				2654418F1E61E5F8003488C1 /* TODO.md in Sources */,
+				2654418D1E61D94A003488C1 /* DummyViewController.swift in Sources */,
+				2654418B1E61D8D1003488C1 /* PayeeSelectionDelegate.swift in Sources */,
 				265441871E61ABAD003488C1 /* ArrayPayeeResource.swift in Sources */,
+				265441891E61D576003488C1 /* PayeeDelegate.swift in Sources */,
 				265441851E61AB32003488C1 /* PayeeResource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

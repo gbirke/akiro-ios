@@ -19,26 +19,25 @@ class PayeeViewController: UITableViewController, UISearchResultsUpdating {
     
     let searchController = UISearchController(searchResultsController: nil)
     
+    var delegate: PayeeDelegate?
+    var payeeSelectionDelegate: PayeeSelectionDelegate?
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let payeeResource = ArrayPayeeResource()
-        
-        payees = payeeResource.getList()
+        payees = appDelegate.payeeRessource.getList()
         
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
         
+        delegate = self
+        
         // See http://stackoverflow.com/questions/32675001/uisearchcontroller-warning-attempting-to-load-the-view-of-a-view-controller
         searchController.loadViewIfNeeded()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,14 +78,18 @@ class PayeeViewController: UITableViewController, UISearchResultsUpdating {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if searchController.isActive && searchController.searchBar.text != "" {
             if indexPath.row > 0 {
-                print("selected payee \(filteredPayees[indexPath.row-1].name)")
+                payeeSelectionDelegate?.payeeWasSelected(filteredPayees[indexPath.row-1])
             } else {
-                print("Created payee \"\(searchController.searchBar.text!)\" ")
+                if let payee = delegate?.addPayee(withName: searchController.searchBar.text!) {
+                    payees.append(payee)
+                    payeeSelectionDelegate?.payeeWasSelected(payee)
+                }
+                
             }
-            
         } else {
-            print("selected payee \(payees[indexPath.row].name)")
+            payeeSelectionDelegate?.payeeWasSelected(payees[indexPath.row])
         }
+    
         let _ = navigationController?.popViewController(animated: true)
     }
     
@@ -111,30 +114,7 @@ class PayeeViewController: UITableViewController, UISearchResultsUpdating {
     }
     */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: - Search results
     
@@ -142,7 +122,7 @@ class PayeeViewController: UITableViewController, UISearchResultsUpdating {
         filteredPayees = payees.filter { payee in
             return payee.name.lowercased().contains(searchText.lowercased())
         }
-        
+
         tableView.reloadData()
     }
     
@@ -152,6 +132,13 @@ class PayeeViewController: UITableViewController, UISearchResultsUpdating {
    
 }
 
+// MARK: - PayeeDelegate
 
+extension PayeeViewController: PayeeDelegate {
+    func addPayee(withName: String) -> Payee {
+        return appDelegate.payeeRessource.insert(withName: withName)
+    }
+    
+}
 
 

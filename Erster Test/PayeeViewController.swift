@@ -19,10 +19,9 @@ class PayeeViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        payees = [
-            Payee(name: "Foo"),
-            Payee(name: "Bar")
-        ]
+        let payeeResource = ArrayPayeeResource()
+        
+        payees = payeeResource.getList()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

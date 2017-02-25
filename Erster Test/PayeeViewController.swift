@@ -19,8 +19,6 @@ class PayeeViewController: UITableViewController, UISearchResultsUpdating {
     
     let searchController = UISearchController(searchResultsController: nil)
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +30,9 @@ class PayeeViewController: UITableViewController, UISearchResultsUpdating {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+        
+        // See http://stackoverflow.com/questions/32675001/uisearchcontroller-warning-attempting-to-load-the-view-of-a-view-controller
+        searchController.loadViewIfNeeded()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

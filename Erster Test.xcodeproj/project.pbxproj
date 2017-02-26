@@ -27,6 +27,8 @@
 		265441A01E621E6B003488C1 /* ExpenseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654419E1E621E6B003488C1 /* ExpenseViewCell.swift */; };
 		265441A11E621E6B003488C1 /* ExpenseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2654419F1E621E6B003488C1 /* ExpenseViewCell.xib */; };
 		265441A31E62E16A003488C1 /* ExpenseEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441A21E62E16A003488C1 /* ExpenseEntryViewController.swift */; };
+		265441A51E6329E9003488C1 /* DateSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441A41E6329E9003488C1 /* DateSelectionViewController.swift */; };
+		265441A71E632C24003488C1 /* DateSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441A61E632C24003488C1 /* DateSelectionDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		2654419E1E621E6B003488C1 /* ExpenseViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseViewCell.swift; sourceTree = "<group>"; };
 		2654419F1E621E6B003488C1 /* ExpenseViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpenseViewCell.xib; sourceTree = "<group>"; };
 		265441A21E62E16A003488C1 /* ExpenseEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseEntryViewController.swift; sourceTree = "<group>"; };
+		265441A41E6329E9003488C1 /* DateSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelectionViewController.swift; sourceTree = "<group>"; };
+		265441A61E632C24003488C1 /* DateSelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSelectionDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				265441961E6207AE003488C1 /* CategorySelectionDelegate.swift */,
 				2654419C1E6218AB003488C1 /* ExpenseListViewController.swift */,
 				265441A21E62E16A003488C1 /* ExpenseEntryViewController.swift */,
+				265441A41E6329E9003488C1 /* DateSelectionViewController.swift */,
+				265441A61E632C24003488C1 /* DateSelectionDelegate.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -223,6 +229,8 @@
 				265441A01E621E6B003488C1 /* ExpenseViewCell.swift in Sources */,
 				2654417B1E61A509003488C1 /* Category.swift in Sources */,
 				265441931E61E7DD003488C1 /* ArrayCategoryResource.swift in Sources */,
+				265441A71E632C24003488C1 /* DateSelectionDelegate.swift in Sources */,
+				265441A51E6329E9003488C1 /* DateSelectionViewController.swift in Sources */,
 				265441971E6207AE003488C1 /* CategorySelectionDelegate.swift in Sources */,
 				2654417F1E61A6F1003488C1 /* Payee.swift in Sources */,
 				265441811E61A73E003488C1 /* PayeeViewController.swift in Sources */,

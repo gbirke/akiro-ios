@@ -39,6 +39,55 @@
             </objects>
             <point key="canvasLocation" x="3038" y="1571"/>
         </scene>
+        <!--Select Date-->
+        <scene sceneID="JHH-Ph-9pP">
+            <objects>
+                <viewController title="Select Date" id="9MW-iQ-ITu" customClass="DateSelectionViewController" customModule="Erster_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZcJ-XU-eD7"/>
+                        <viewControllerLayoutGuide type="bottom" id="EgA-2Z-4Ku"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CNR-aP-6EZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="hzN-H2-bdI">
+                                <rect key="frame" x="0.0" y="64" width="320" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="509815165.15365702">
+                                    <!--2017-02-26 15:19:25 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTi-dZ-fRC">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ayc-hO-AfY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="okTouched:" destination="9MW-iQ-ITu" eventType="touchUpInside" id="m4O-p7-y82"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yTi-dZ-fRC" secondAttribute="trailing" id="46Z-kN-clr"/>
+                            <constraint firstItem="EgA-2Z-4Ku" firstAttribute="top" secondItem="yTi-dZ-fRC" secondAttribute="bottom" id="TG9-NK-SOY"/>
+                            <constraint firstItem="yTi-dZ-fRC" firstAttribute="leading" secondItem="CNR-aP-6EZ" secondAttribute="leading" id="oj5-uy-bjQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dateSelector" destination="hzN-H2-bdI" id="Eqf-ry-VPL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GhY-fF-JZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3050.625" y="118.30985915492958"/>
+        </scene>
         <!--Select Category-->
         <scene sceneID="Vbt-5o-VGM">
             <objects>
@@ -131,6 +180,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5gO-MN-q7d">
+                            <rect key="frame" x="0.0" y="223" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <state key="normal" title="Save">
+                                <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
                         <sections>
                             <tableViewSection id="xdX-Pq-Xyz">
                                 <cells>
@@ -247,6 +305,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="9MW-iQ-ITu" kind="show" identifier="selectDate" id="1PG-sl-hsQ"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yoC-hB-sRE">
                                         <rect key="frame" x="0.0" y="179" width="320" height="44"/>
@@ -280,6 +341,7 @@
                     </tableView>
                     <connections>
                         <outlet property="selectedCategoryLabel" destination="R0a-kY-wHl" id="MxX-TP-i6a"/>
+                        <outlet property="selectedDateLabel" destination="wVJ-s5-KWQ" id="0Bk-Fi-zGQ"/>
                         <outlet property="selectedPayeeLabel" destination="i68-aR-xxY" id="29t-Rn-yLH"/>
                     </connections>
                 </tableViewController>

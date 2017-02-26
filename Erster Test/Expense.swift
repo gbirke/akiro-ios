@@ -9,7 +9,7 @@
 import Foundation
 
 struct Expense {
-    var amount: Double
+    var amount: Float
     var category: Category
     var date: Date
     var payee: Payee?

@@ -24,15 +24,37 @@ class ExpenseEntryViewController: UITableViewController, PayeeSelectionDelegate,
             selectedDateLabel?.text = formatter.string(from: dateEntered!)
         }
     }
+    
+    var delegate: ExpenseDelegate?
 
     @IBAction func amountEntered(_ sender: UITextField) {
-        if let textEntered = sender.text, let convertedAmount = Float(textEntered) {
+        if let textEntered = sender.text, let convertedAmount = Float(textEntered.replacingOccurrences(of: ",", with: ".")) { // Crude float conversion for german numbers until we have fancy amount input
             amount = convertedAmount
         }
     }
+    
+    @IBAction func saveTouched(_ sender: Any) {
+        if amount > 0 && category != nil && dateEntered != nil {
+            delegate?.addExpense(amount: -amount, category: category!, date: dateEntered!, payee: payee, memo: memo)
+            let _ = navigationController?.popViewController(animated: true)
+        } else {
+            guard let button = self.saveButton else {
+                return;
+            }
+            UIView.animate(withDuration: 1) {
+                let oldColor = button.backgroundColor
+                button.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+                UIView.animate(withDuration: 1) {
+                    button.backgroundColor = oldColor
+                }
+            }
+        }
+    }
+    
     @IBOutlet weak var selectedCategoryLabel: UILabel!
     @IBOutlet weak var selectedPayeeLabel: UILabel!
     @IBOutlet weak var selectedDateLabel: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
 
     
     override func viewDidLoad() {
@@ -56,8 +78,6 @@ class ExpenseEntryViewController: UITableViewController, PayeeSelectionDelegate,
     }
 
     // MARK: - Table view data source
-
-    
 
     func payeeWasSelected(_ selectedPayee: Payee) {
         // TODO unset payee when the same one is selected

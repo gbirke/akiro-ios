@@ -14,7 +14,9 @@
 
 ## Add export
 
-## Fast entry by using last values
+## Fast entry 
+- Use last values
+- Fancy amount input
 
 ## Use GPS
 

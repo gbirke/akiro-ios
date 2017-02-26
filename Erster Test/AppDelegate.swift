@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var payeeRessource = ArrayPayeeResource()
     var categoryRessource = ArrayCategoryResource()
+    var expenseRessource = ArrayExpenseResource()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

@@ -17,3 +17,6 @@
 ## Fast entry by using last values
 
 ## Use GPS
+
+# Design improvements
+- Consistent color scheme

@@ -18,7 +18,6 @@
 		265441871E61ABAD003488C1 /* ArrayPayeeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441861E61ABAD003488C1 /* ArrayPayeeResource.swift */; };
 		265441891E61D576003488C1 /* PayeeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441881E61D576003488C1 /* PayeeDelegate.swift */; };
 		2654418B1E61D8D1003488C1 /* PayeeSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654418A1E61D8D1003488C1 /* PayeeSelectionDelegate.swift */; };
-		2654418D1E61D94A003488C1 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654418C1E61D94A003488C1 /* DummyViewController.swift */; };
 		265441911E61E7AC003488C1 /* CategoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441901E61E7AC003488C1 /* CategoryResource.swift */; };
 		265441931E61E7DD003488C1 /* ArrayCategoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441921E61E7DD003488C1 /* ArrayCategoryResource.swift */; };
 		265441951E61EB41003488C1 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441941E61EB41003488C1 /* CategoryViewController.swift */; };
@@ -27,6 +26,7 @@
 		2654419D1E6218AB003488C1 /* ExpenseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654419C1E6218AB003488C1 /* ExpenseListViewController.swift */; };
 		265441A01E621E6B003488C1 /* ExpenseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654419E1E621E6B003488C1 /* ExpenseViewCell.swift */; };
 		265441A11E621E6B003488C1 /* ExpenseViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2654419F1E621E6B003488C1 /* ExpenseViewCell.xib */; };
+		265441A31E62E16A003488C1 /* ExpenseEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441A21E62E16A003488C1 /* ExpenseEntryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,6 @@
 		265441861E61ABAD003488C1 /* ArrayPayeeResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayPayeeResource.swift; sourceTree = "<group>"; };
 		265441881E61D576003488C1 /* PayeeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeDelegate.swift; sourceTree = "<group>"; };
 		2654418A1E61D8D1003488C1 /* PayeeSelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeSelectionDelegate.swift; sourceTree = "<group>"; };
-		2654418C1E61D94A003488C1 /* DummyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		265441901E61E7AC003488C1 /* CategoryResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryResource.swift; sourceTree = "<group>"; };
 		265441921E61E7DD003488C1 /* ArrayCategoryResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayCategoryResource.swift; sourceTree = "<group>"; };
 		265441941E61EB41003488C1 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		2654419C1E6218AB003488C1 /* ExpenseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseListViewController.swift; sourceTree = "<group>"; };
 		2654419E1E621E6B003488C1 /* ExpenseViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseViewCell.swift; sourceTree = "<group>"; };
 		2654419F1E621E6B003488C1 /* ExpenseViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpenseViewCell.xib; sourceTree = "<group>"; };
+		265441A21E62E16A003488C1 /* ExpenseEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseEntryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,10 +100,10 @@
 			children = (
 				265441801E61A73E003488C1 /* PayeeViewController.swift */,
 				2654418A1E61D8D1003488C1 /* PayeeSelectionDelegate.swift */,
-				2654418C1E61D94A003488C1 /* DummyViewController.swift */,
 				265441941E61EB41003488C1 /* CategoryViewController.swift */,
 				265441961E6207AE003488C1 /* CategorySelectionDelegate.swift */,
 				2654419C1E6218AB003488C1 /* ExpenseListViewController.swift */,
+				265441A21E62E16A003488C1 /* ExpenseEntryViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -216,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				265441A31E62E16A003488C1 /* ExpenseEntryViewController.swift in Sources */,
 				2654419B1E621063003488C1 /* Expense.swift in Sources */,
 				265441911E61E7AC003488C1 /* CategoryResource.swift in Sources */,
 				265441651E6094DB003488C1 /* AppDelegate.swift in Sources */,
@@ -225,7 +226,6 @@
 				265441971E6207AE003488C1 /* CategorySelectionDelegate.swift in Sources */,
 				2654417F1E61A6F1003488C1 /* Payee.swift in Sources */,
 				265441811E61A73E003488C1 /* PayeeViewController.swift in Sources */,
-				2654418D1E61D94A003488C1 /* DummyViewController.swift in Sources */,
 				2654418B1E61D8D1003488C1 /* PayeeSelectionDelegate.swift in Sources */,
 				265441871E61ABAD003488C1 /* ArrayPayeeResource.swift in Sources */,
 				265441951E61EB41003488C1 /* CategoryViewController.swift in Sources */,

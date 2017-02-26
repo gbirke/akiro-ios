@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Erster Test.xcodeproj">
+      location = "self:/Users/gbirke/src/Erster Test/Akiro-iOS.xcodeproj">
    </FileRef>
 </Workspace>

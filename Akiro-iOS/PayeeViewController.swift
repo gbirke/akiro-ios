@@ -120,7 +120,10 @@ class PayeeViewController: UITableViewController, UISearchResultsUpdating {
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
         filteredPayees = payees.filter { payee in
-            return payee.name.lowercased().contains(searchText.lowercased())
+            guard let name = payee.name else {
+                return false
+            }
+            return name.lowercased().contains(searchText.lowercased())
         }
 
         tableView.reloadData()

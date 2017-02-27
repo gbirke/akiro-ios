@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    var payeeRessource = ArrayPayeeResource()
+    var payeeRessource = CoreDataPayeeResource()
     var categoryRessource = ArrayCategoryResource()
     var expenseRessource = ArrayExpenseResource()
 

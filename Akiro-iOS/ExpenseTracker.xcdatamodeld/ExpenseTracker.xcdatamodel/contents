@@ -3,6 +3,7 @@
     <entity name="Category" representedClassName="Category" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="parent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sortId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="expenses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Expense" inverseName="category" inverseEntity="Expense" syncable="YES"/>
     </entity>
     <entity name="Expense" representedClassName="Expense" syncable="YES">
@@ -17,7 +18,7 @@
         <relationship name="expenses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Expense" inverseName="payee" inverseEntity="Expense" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Category" positionX="-765" positionY="-90" width="128" height="90"/>
+        <element name="Category" positionX="-765" positionY="-90" width="128" height="105"/>
         <element name="Expense" positionX="-441" positionY="-111" width="128" height="120"/>
         <element name="Payee" positionX="-677" positionY="207" width="128" height="75"/>
     </elements>

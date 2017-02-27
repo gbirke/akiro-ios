@@ -14,11 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     var payeeRessource = CoreDataPayeeResource()
-    var categoryRessource = ArrayCategoryResource()
+    var categoryRessource = CoreDataCategoryResource()
     var expenseRessource = ArrayExpenseResource()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        preloadData()
+        
         // Override point for customization after application launch.
         return true
     }
@@ -45,6 +48,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func preloadData() {
+        if UserDefaults.standard.bool(forKey: "isPreloaded") {
+            return
+        }
+        categoryRessource.initializeFromCSV(preloadUrl: Bundle.main.url(forResource: "categories", withExtension: "csv"))
+        
+        UserDefaults.standard.set(true, forKey: "isPreloaded")
+        
+    }
 
 }
 

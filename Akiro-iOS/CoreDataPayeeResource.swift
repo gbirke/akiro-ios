@@ -47,7 +47,7 @@ struct CoreDataPayeeResource: PayeeResource {
             try payees = persistentContainer.viewContext.fetch(request)
         } catch {
             let nserror = error as NSError
-            print("Database save error: \(nserror.localizedDescription)")
+            print("Database query error: \(nserror.localizedDescription)")
         }
         return payees
     }

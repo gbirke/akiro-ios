@@ -10,13 +10,7 @@ import Foundation
 
 class ArrayCategoryResource: CategoryResource {
     
-    let categories = [
-        Category(name: "Auswärts essen", parent: "Allgemein"),
-        Category(name: "Supermarkt", parent: "Allgemein"),
-        Category(name: "Naturkost", parent: "Allgemein"),
-        Category(name: "Kontogebühren", parent: "Finanzen"),
-        Category(name: "Hausratversicherung", parent: "Finanzen")
-    ]
+    let categories:[Category] = []
     
     func getList() -> [Category] {
         return categories

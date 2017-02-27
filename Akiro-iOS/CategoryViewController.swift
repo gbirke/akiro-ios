@@ -34,8 +34,8 @@ class CategoryViewController: UITableViewController {
         var currentSection = ""
         var sectionIndices = [String: Int]()
         for (index, category) in categories.enumerated() {
-            if sectionIndices[category.parent] == nil {
-                currentSection = category.parent
+            if category.parent != nil && sectionIndices[category.parent!] == nil {
+                currentSection = category.parent!
                 sectionIndices[currentSection] = sectionIndices.count
                 categoryIndex.append([index])
             } else {

@@ -16,7 +16,6 @@
 		265441891E61D576003488C1 /* PayeeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441881E61D576003488C1 /* PayeeDelegate.swift */; };
 		2654418B1E61D8D1003488C1 /* PayeeSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654418A1E61D8D1003488C1 /* PayeeSelectionDelegate.swift */; };
 		265441911E61E7AC003488C1 /* CategoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441901E61E7AC003488C1 /* CategoryResource.swift */; };
-		265441931E61E7DD003488C1 /* ArrayCategoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441921E61E7DD003488C1 /* ArrayCategoryResource.swift */; };
 		265441951E61EB41003488C1 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441941E61EB41003488C1 /* CategoryViewController.swift */; };
 		265441971E6207AE003488C1 /* CategorySelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441961E6207AE003488C1 /* CategorySelectionDelegate.swift */; };
 		2654419D1E6218AB003488C1 /* ExpenseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2654419C1E6218AB003488C1 /* ExpenseListViewController.swift */; };
@@ -50,11 +49,9 @@
 		265441701E6094DB003488C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		265441801E61A73E003488C1 /* PayeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeViewController.swift; sourceTree = "<group>"; };
 		265441841E61AB32003488C1 /* PayeeResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeResource.swift; sourceTree = "<group>"; };
-		265441861E61ABAD003488C1 /* ArrayPayeeResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayPayeeResource.swift; sourceTree = "<group>"; };
 		265441881E61D576003488C1 /* PayeeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeDelegate.swift; sourceTree = "<group>"; };
 		2654418A1E61D8D1003488C1 /* PayeeSelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayeeSelectionDelegate.swift; sourceTree = "<group>"; };
 		265441901E61E7AC003488C1 /* CategoryResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryResource.swift; sourceTree = "<group>"; };
-		265441921E61E7DD003488C1 /* ArrayCategoryResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayCategoryResource.swift; sourceTree = "<group>"; };
 		265441941E61EB41003488C1 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		265441961E6207AE003488C1 /* CategorySelectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySelectionDelegate.swift; sourceTree = "<group>"; };
 		265441981E620EEE003488C1 /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = TODO.md; path = "Akiro-iOS/TODO.md"; sourceTree = "<group>"; };
@@ -142,10 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				265441841E61AB32003488C1 /* PayeeResource.swift */,
-				265441861E61ABAD003488C1 /* ArrayPayeeResource.swift */,
 				265441881E61D576003488C1 /* PayeeDelegate.swift */,
 				265441901E61E7AC003488C1 /* CategoryResource.swift */,
-				265441921E61E7DD003488C1 /* ArrayCategoryResource.swift */,
 				265441AC1E633451003488C1 /* ExpenseDelegate.swift */,
 				265441A81E633359003488C1 /* ExpenseResource.swift */,
 			);
@@ -286,7 +281,6 @@
 				26F5A47F1E64A664009AF615 /* Expense+CoreDataClass.swift in Sources */,
 				265441A01E621E6B003488C1 /* ExpenseViewCell.swift in Sources */,
 				265441AD1E633451003488C1 /* ExpenseDelegate.swift in Sources */,
-				265441931E61E7DD003488C1 /* ArrayCategoryResource.swift in Sources */,
 				26F5A4731E646DFD009AF615 /* CoreDataCategoryResource.swift in Sources */,
 				265441A71E632C24003488C1 /* DateSelectionDelegate.swift in Sources */,
 				265441A51E6329E9003488C1 /* DateSelectionViewController.swift in Sources */,

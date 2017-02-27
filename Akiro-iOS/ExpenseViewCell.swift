@@ -37,7 +37,7 @@ class ExpenseViewCell: UITableViewCell {
             } else {
                 priceLabel?.textColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
             }
-            descriptionLabel?.text = setExpense.payee?.name ?? setExpense.category.name
+            descriptionLabel?.text = setExpense.payee?.name ?? setExpense.category?.name ?? "Unclassified"
         }
     }
     

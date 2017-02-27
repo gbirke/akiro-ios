@@ -7,15 +7,31 @@
 //
 
 import UIKit
+import CoreData
+
+let persistentConatiner:NSPersistentContainer = {
+    let container = NSPersistentContainer(name: "ExpenseTracker")
+    container.loadPersistentStores() {
+        (storeDescription, error ) in
+        
+        if let error = error {
+            let nserror = error as NSError
+            print("Database init error: \(nserror.localizedDescription)")
+        }
+    }
+    return container
+}()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    var payeeRessource = CoreDataPayeeResource()
-    var categoryRessource = CoreDataCategoryResource()
-    var expenseRessource = ArrayExpenseResource()
+    
+    
+    var payeeRessource = CoreDataPayeeResource(withContainer: persistentConatiner)
+    var categoryRessource = CoreDataCategoryResource(withContainer: persistentConatiner)
+    var expenseRessource = CoreDataExpenseResource(withContainer: persistentConatiner)
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

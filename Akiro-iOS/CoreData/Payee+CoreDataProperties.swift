@@ -17,6 +17,6 @@ extension Payee {
     }
 
     @NSManaged public var name: String?
-//    @NSManaged public var expenses: Expense?
+    @NSManaged public var expenses: Expense?
 
 }

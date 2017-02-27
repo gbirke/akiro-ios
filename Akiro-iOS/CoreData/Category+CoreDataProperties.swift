@@ -19,6 +19,6 @@ extension Category {
     @NSManaged public var name: String?
     @NSManaged public var parent: String?
     @NSManaged public var sortId: Int16
-    //@NSManaged public var expenses: Expense?
+    @NSManaged public var expenses: Expense?
 
 }

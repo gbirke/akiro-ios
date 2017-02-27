@@ -55,9 +55,9 @@ class ExpenseListViewController: UITableViewController, ExpenseDelegate {
     }
     
     func addExpense( amount:Float, category: Category, date: Date, payee: Payee?, memo: String? ) {
-        let newExpense = Expense(amount: amount, category: category, date: date, payee: payee, memo: memo)
-        appDelegate.expenseRessource.insert(expense: newExpense)
+        let newExpense = appDelegate.expenseRessource.insert(amount: amount, category: category, date: date, payee: payee, memo: memo)
         expenses.insert(newExpense, at: 0)
+        let _ = navigationController?.popViewController(animated: true)
     }
     
 

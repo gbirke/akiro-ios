@@ -11,18 +11,11 @@ import CoreData
 
 struct CoreDataCategoryResource: CategoryResource {
     
-    var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "ExpenseTracker")
-        container.loadPersistentStores() {
-            (storeDescription, error ) in
-            
-            if let error = error {
-                let nserror = error as NSError
-                print("Database init error: \(nserror.localizedDescription)")
-            }
-        }
-        return container
-    }()
+    var persistentContainer: NSPersistentContainer
+    
+    init(withContainer: NSPersistentContainer) {
+        persistentContainer = withContainer
+    }
     
     func getList() -> [Category] {
         var categories: [Category] = []

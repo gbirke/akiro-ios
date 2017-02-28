@@ -30,6 +30,8 @@
 		2682971E1E6394E000FC95F4 /* Payee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682971C1E6394E000FC95F4 /* Payee+CoreDataClass.swift */; };
 		2682971F1E6394E000FC95F4 /* Payee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682971D1E6394E000FC95F4 /* Payee+CoreDataProperties.swift */; };
 		268297211E6397DF00FC95F4 /* CoreDataPayeeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268297201E6397DF00FC95F4 /* CoreDataPayeeResource.swift */; };
+		269045D01E65EAF5006148B3 /* noun_649978_cc.png in Resources */ = {isa = PBXBuildFile; fileRef = 269045CF1E65EAF5006148B3 /* noun_649978_cc.png */; };
+		269045D21E65EDD1006148B3 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269045D11E65EDD1006148B3 /* ExportViewController.swift */; };
 		26F5A4701E646D7F009AF615 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5A46E1E646D7F009AF615 /* Category+CoreDataClass.swift */; };
 		26F5A4731E646DFD009AF615 /* CoreDataCategoryResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5A4721E646DFD009AF615 /* CoreDataCategoryResource.swift */; };
 		26F5A4751E646F28009AF615 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F5A4741E646F28009AF615 /* Category+CoreDataProperties.swift */; };
@@ -67,6 +69,8 @@
 		2682971C1E6394E000FC95F4 /* Payee+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Payee+CoreDataClass.swift"; path = "CoreData/Payee+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2682971D1E6394E000FC95F4 /* Payee+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Payee+CoreDataProperties.swift"; path = "CoreData/Payee+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		268297201E6397DF00FC95F4 /* CoreDataPayeeResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataPayeeResource.swift; sourceTree = "<group>"; };
+		269045CF1E65EAF5006148B3 /* noun_649978_cc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noun_649978_cc.png; sourceTree = "<group>"; };
+		269045D11E65EDD1006148B3 /* ExportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
 		26F5A46E1E646D7F009AF615 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataClass.swift"; path = "CoreData/Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		26F5A4721E646DFD009AF615 /* CoreDataCategoryResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCategoryResource.swift; sourceTree = "<group>"; };
 		26F5A4741E646F28009AF615 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Category+CoreDataProperties.swift"; path = "CoreData/Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 				265441A21E62E16A003488C1 /* ExpenseEntryViewController.swift */,
 				265441A41E6329E9003488C1 /* DateSelectionViewController.swift */,
 				265441A61E632C24003488C1 /* DateSelectionDelegate.swift */,
+				269045D11E65EDD1006148B3 /* ExportViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			children = (
 				2654416B1E6094DB003488C1 /* Assets.xcassets */,
 				2654416D1E6094DB003488C1 /* LaunchScreen.storyboard */,
+				269045CF1E65EAF5006148B3 /* noun_649978_cc.png */,
 				265441701E6094DB003488C1 /* Info.plist */,
 				26F5A47B1E649414009AF615 /* categories.csv */,
 			);
@@ -252,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				269045D01E65EAF5006148B3 /* noun_649978_cc.png in Resources */,
 				2654416F1E6094DB003488C1 /* LaunchScreen.storyboard in Resources */,
 				26F5A47C1E649414009AF615 /* categories.csv in Resources */,
 				2654416C1E6094DB003488C1 /* Assets.xcassets in Resources */,
@@ -287,6 +294,7 @@
 				265441971E6207AE003488C1 /* CategorySelectionDelegate.swift in Sources */,
 				265441811E61A73E003488C1 /* PayeeViewController.swift in Sources */,
 				2654418B1E61D8D1003488C1 /* PayeeSelectionDelegate.swift in Sources */,
+				269045D21E65EDD1006148B3 /* ExportViewController.swift in Sources */,
 				2682971F1E6394E000FC95F4 /* Payee+CoreDataProperties.swift in Sources */,
 				265441951E61EB41003488C1 /* CategoryViewController.swift in Sources */,
 				2654419D1E6218AB003488C1 /* ExpenseListViewController.swift in Sources */,

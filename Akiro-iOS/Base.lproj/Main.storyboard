@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yg9-n6-hWF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oBi-JY-fgh">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Select payee-->
         <scene sceneID="K8B-RE-VG6">
             <objects>
-                <tableViewController id="z0m-Nh-hDl" customClass="PayeeViewController" customModule="Erster_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="z0m-Nh-hDl" customClass="PayeeViewController" customModule="Akiro_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0fK-0P-zQf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lh1-2O-pIq" id="uph-EY-oDc">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -42,7 +42,7 @@
         <!--Select Date-->
         <scene sceneID="JHH-Ph-9pP">
             <objects>
-                <viewController title="Select Date" id="9MW-iQ-ITu" customClass="DateSelectionViewController" customModule="Erster_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Select Date" id="9MW-iQ-ITu" customClass="DateSelectionViewController" customModule="Akiro_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZcJ-XU-eD7"/>
                         <viewControllerLayoutGuide type="bottom" id="EgA-2Z-4Ku"/>
@@ -91,7 +91,7 @@
         <!--Select Category-->
         <scene sceneID="Vbt-5o-VGM">
             <objects>
-                <tableViewController title="Select Category" id="uql-iu-fZj" customClass="CategoryViewController" customModule="Erster_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Select Category" id="uql-iu-fZj" customClass="CategoryViewController" customModule="Akiro_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dtC-Hy-PBb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -102,7 +102,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q4h-XG-Dte" id="6Ex-je-vcw">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -117,10 +117,83 @@
             </objects>
             <point key="canvasLocation" x="3038" y="806"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Export-->
+        <scene sceneID="L1h-GD-MZf">
+            <objects>
+                <viewController title="Export" id="rPa-rk-XUF" customClass="ExportViewController" customModule="Akiro_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fSI-mz-kk4"/>
+                        <viewControllerLayoutGuide type="bottom" id="ebB-GS-DaG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t89-nW-JvW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Export:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jH6-mn-bXU">
+                                <rect key="frame" x="16" y="55" width="92" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jp0-YB-ot5">
+                                <rect key="frame" x="16" y="116" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Export new expenses"/>
+                                <connections>
+                                    <action selector="exportNew:" destination="rPa-rk-XUF" eventType="touchUpInside" id="How-WZ-Xaa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NH0-xo-uXg">
+                                <rect key="frame" x="16" y="154" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Export all expenses"/>
+                                <connections>
+                                    <action selector="exportAll:" destination="rPa-rk-XUF" eventType="touchUpInside" id="1Fs-FQ-Esa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Never" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkD-ww-7nK">
+                                <rect key="frame" x="116" y="55" width="188" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Export" id="NGU-2c-YTS"/>
+                    <connections>
+                        <outlet property="lastExportLabel" destination="GkD-ww-7nK" id="1WX-sX-7sk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OGQ-xv-Ygy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-84.375" y="1342.605633802817"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="avq-xV-YZG">
+            <objects>
+                <tabBarController id="oBi-JY-fgh" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="OXt-5l-htU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="yg9-n6-hWF" kind="relationship" relationship="viewControllers" id="mx0-KG-CRm"/>
+                        <segue destination="rPa-rk-XUF" kind="relationship" relationship="viewControllers" id="ysu-sg-gQE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s6q-vh-nS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1065" y="807"/>
+        </scene>
+        <!--Expenses-->
         <scene sceneID="jqP-Rd-57Y">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yg9-n6-hWF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Expenses" id="1ie-FY-yQU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1LM-bM-CTd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -138,18 +211,18 @@
         <!--Expense List View Controller-->
         <scene sceneID="VSz-iA-lky">
             <objects>
-                <tableViewController id="qeM-NC-GWv" customClass="ExpenseListViewController" customModule="Erster_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="qeM-NC-GWv" customClass="ExpenseListViewController" customModule="Akiro_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2de-sW-EcK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="expenseCell" id="fAo-6V-riR" customClass="ExpenseViewCell" customModule="Erster_Test" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="expenseCell" id="fAo-6V-riR" customClass="ExpenseViewCell" customModule="Akiro_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fAo-6V-riR" id="42A-le-CnW">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -174,7 +247,7 @@
         <!--Expense Entry View Controller-->
         <scene sceneID="DIH-8a-gOl">
             <objects>
-                <tableViewController storyboardIdentifier="ExpenseEntry" id="47Q-Nx-01I" customClass="ExpenseEntryViewController" customModule="Erster_Test" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ExpenseEntry" id="47Q-Nx-01I" customClass="ExpenseEntryViewController" customModule="Akiro_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="f69-iu-D8b">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -199,7 +272,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V29-qX-Y7x" id="9Hd-0j-m0i">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0,00" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nOW-mp-DrT">
@@ -235,18 +308,18 @@
                                         <rect key="frame" x="0.0" y="44" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y9g-cU-WWb" id="f2a-oo-oqH">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Payee:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fQt-o1-7Jl">
-                                                    <rect key="frame" x="15" y="11" width="51" height="21"/>
+                                                    <rect key="frame" x="15" y="12" width="55" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Choose payee" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i68-aR-xxY">
-                                                    <rect key="frame" x="176" y="11" width="109" height="21"/>
+                                                    <rect key="frame" x="187.5" y="14" width="97.5" height="18"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -262,18 +335,18 @@
                                         <rect key="frame" x="0.0" y="88" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OLR-RU-EcO" id="Fmi-1m-pnY">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Category:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pjc-Hq-OV6">
-                                                    <rect key="frame" x="15" y="11" width="75" height="21"/>
+                                                    <rect key="frame" x="15" y="12" width="81.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Choose Category" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R0a-kY-wHl">
-                                                    <rect key="frame" x="165" y="11" width="120" height="21"/>
+                                                    <rect key="frame" x="165.5" y="14" width="119.5" height="18"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -289,11 +362,11 @@
                                         <rect key="frame" x="0.0" y="132" width="320" height="47"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aKK-AI-hiz" id="sLq-zn-k7F">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="46"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="46.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9eU-xc-L5g">
-                                                    <rect key="frame" x="15" y="13" width="44" height="21"/>
+                                                    <rect key="frame" x="15" y="13" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -316,7 +389,7 @@
                                         <rect key="frame" x="0.0" y="179" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yoC-hB-sRE" id="cQY-Bl-bmD">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a memo" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="j1Y-9u-Hoh">

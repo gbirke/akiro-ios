@@ -37,7 +37,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FEb-Gb-2KZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3038" y="1571"/>
+            <point key="canvasLocation" x="4035" y="1570.7746478873239"/>
         </scene>
         <!--Select Date-->
         <scene sceneID="JHH-Ph-9pP">
@@ -59,7 +59,7 @@
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTi-dZ-fRC">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="475" width="320" height="44"/>
                                 <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ayc-hO-AfY"/>
@@ -117,59 +117,130 @@
             </objects>
             <point key="canvasLocation" x="3038" y="806"/>
         </scene>
-        <!--Export-->
-        <scene sceneID="L1h-GD-MZf">
+        <!--Export View Controller-->
+        <scene sceneID="9qZ-oX-i8c">
             <objects>
-                <viewController title="Export" id="rPa-rk-XUF" customClass="ExportViewController" customModule="Akiro_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fSI-mz-kk4"/>
-                        <viewControllerLayoutGuide type="bottom" id="ebB-GS-DaG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="t89-nW-JvW">
+                <tableViewController id="WU3-Fp-gh5" customClass="ExportViewController" customModule="Akiro_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mT2-nc-aui">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Export:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jH6-mn-bXU">
-                                <rect key="frame" x="16" y="55" width="92" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jp0-YB-ot5">
-                                <rect key="frame" x="16" y="116" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Export new expenses"/>
-                                <connections>
-                                    <action selector="exportNew:" destination="rPa-rk-XUF" eventType="touchUpInside" id="How-WZ-Xaa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NH0-xo-uXg">
-                                <rect key="frame" x="16" y="154" width="288" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Export all expenses"/>
-                                <connections>
-                                    <action selector="exportAll:" destination="rPa-rk-XUF" eventType="touchUpInside" id="1Fs-FQ-Esa"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Never" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkD-ww-7nK">
-                                <rect key="frame" x="116" y="55" width="188" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Export" id="NGU-2c-YTS"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="X7Y-ly-d4a">
+                            <rect key="frame" x="0.0" y="132" width="320" height="102"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jp0-YB-ot5">
+                                    <rect key="frame" x="16" y="8" width="288" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Export new expenses"/>
+                                    <connections>
+                                        <action selector="exportNew:" destination="WU3-Fp-gh5" eventType="touchUpInside" id="UBW-IL-5dj"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NH0-xo-uXg">
+                                    <rect key="frame" x="16" y="52" width="288" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Export all expenses"/>
+                                    <connections>
+                                        <action selector="exportAll:" destination="WU3-Fp-gh5" eventType="touchUpInside" id="L0R-mf-GDW"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <sections>
+                            <tableViewSection id="9Qs-9C-brz">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="Zzk-uI-hsx" detailTextLabel="b2L-EJ-xuz" style="IBUITableViewCellStyleValue2" id="4L5-gl-0Jo">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4L5-gl-0Jo" id="UzS-mg-v4g">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Last export:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zzk-uI-hsx">
+                                                    <rect key="frame" x="15" y="14" width="91" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Never" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b2L-EJ-xuz">
+                                                    <rect key="frame" x="112" y="14" width="36" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="mYx-Ic-SJz" detailTextLabel="M0e-3R-XCx" style="IBUITableViewCellStyleValue2" id="TWU-wY-xDB">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TWU-wY-xDB" id="Ql4-3t-uEw">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="New expenses:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mYx-Ic-SJz">
+                                                    <rect key="frame" x="15" y="14" width="91" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M0e-3R-XCx">
+                                                    <rect key="frame" x="112" y="14" width="8.5" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="qSj-qd-VCX" detailTextLabel="vMe-RG-JL9" style="IBUITableViewCellStyleValue2" id="MMH-wo-jN4">
+                                        <rect key="frame" x="0.0" y="88" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MMH-wo-jN4" id="QjW-1p-2Gd">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="All expenses:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qSj-qd-VCX">
+                                                    <rect key="frame" x="15" y="14" width="91" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vMe-RG-JL9">
+                                                    <rect key="frame" x="112" y="14" width="8.5" height="16"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="WU3-Fp-gh5" id="n3c-7K-wDJ"/>
+                            <outlet property="delegate" destination="WU3-Fp-gh5" id="dFl-81-IAT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="jGS-Da-jUH"/>
                     <connections>
-                        <outlet property="lastExportLabel" destination="GkD-ww-7nK" id="1WX-sX-7sk"/>
+                        <outlet property="allExpensesCountLabel" destination="vMe-RG-JL9" id="m4j-9E-BDL"/>
+                        <outlet property="lastExportLabel" destination="b2L-EJ-xuz" id="Ufc-uP-quR"/>
+                        <outlet property="newExpensesCountLabel" destination="M0e-3R-XCx" id="XWb-44-ERl"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OGQ-xv-Ygy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mJb-EP-CrP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-84.375" y="1342.605633802817"/>
+            <point key="canvasLocation" x="988.125" y="1466.1971830985915"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="avq-xV-YZG">
@@ -182,7 +253,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="yg9-n6-hWF" kind="relationship" relationship="viewControllers" id="mx0-KG-CRm"/>
-                        <segue destination="rPa-rk-XUF" kind="relationship" relationship="viewControllers" id="ysu-sg-gQE"/>
+                        <segue destination="O8H-y7-ehh" kind="relationship" relationship="viewControllers" id="fYU-ip-4fM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6q-vh-nS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -425,6 +496,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u5d-HT-j4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2190" y="806"/>
+        </scene>
+        <!--Export-->
+        <scene sceneID="IN3-WH-oTq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O8H-y7-ehh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Export" id="oWk-cK-m9M"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="am5-tR-kj2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WU3-Fp-gh5" kind="relationship" relationship="rootViewController" id="SGC-AJ-hdq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gpD-Cr-suY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-9.375" y="1466.1971830985915"/>
         </scene>
     </scenes>
 </document>

@@ -10,6 +10,9 @@ import Foundation
 
 protocol ExpenseResource {
     func getList() -> [Expense]
+    func getList(startDate: Date) -> [Expense]
+    func getCount() -> Int
+    func getCount(startDate: Date) -> Int
     func insert(amount:Float, category: Category, date: Date, payee: Payee?, memo: String?) -> Expense
 }
 

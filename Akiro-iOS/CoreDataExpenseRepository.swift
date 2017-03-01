@@ -50,4 +50,40 @@ struct CoreDataExpenseResource: ExpenseResource {
         }
         return expenses
     }
+    
+    func getList(startDate: Date) -> [Expense] {
+        var expenses: [Expense] = []
+        let request: NSFetchRequest<Expense> = Expense.fetchRequest()
+        request.predicate = NSPredicate(format: "date >= %@", startDate as NSDate)
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
+        do {
+            try expenses = persistentContainer.viewContext.fetch(request)
+        } catch {
+            let nserror = error as NSError
+            print("Database query error: \(nserror.localizedDescription)")
+        }
+        return expenses
+    }
+    
+    func getCount() -> Int {
+        let request: NSFetchRequest<Expense> = Expense.fetchRequest()
+        do {
+            return try persistentContainer.viewContext.count(for: request)
+        } catch {
+            print("Error getting entity count: \(error)")
+        }
+        return 0
+    }
+    
+    func getCount(startDate: Date ) -> Int {
+        let request: NSFetchRequest<Expense> = Expense.fetchRequest()
+        request.predicate = NSPredicate(format: "date >= %@", startDate as NSDate)
+        do {
+            return try persistentContainer.viewContext.count(for: request)
+        } catch {
+            print("Error getting entity count: \(error)")
+        }
+        return 0
+    }
+    
 }

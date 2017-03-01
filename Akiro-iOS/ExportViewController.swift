@@ -9,32 +9,48 @@
 import UIKit
 import MessageUI
 
-class ExportViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class ExportViewController: UITableViewController, MFMailComposeViewControllerDelegate {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    let LAST_EXPORT_KEY = "last_export"
+    
 
     @IBOutlet weak var lastExportLabel: UILabel!
+    @IBOutlet weak var allExpensesCountLabel: UILabel!
+    @IBOutlet weak var newExpensesCountLabel: UILabel!
     
     @IBAction func exportNew(_ sender: Any) {
-        let alertController = UIAlertController(title: "Error", message:
-            "Not implemented yet!", preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+        let lastExport:Date? = UserDefaults.standard.object(forKey: LAST_EXPORT_KEY) as? Date
+        var exportString = ""
+        let exportDate = Date()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
         
-        self.present(alertController, animated: true, completion: nil)
+        if lastExport == nil {
+            return
+        }
         
+        for expense in appDelegate.expenseRessource.getList(startDate: lastExport!) {
+            exportString += CSVColumns(fromExpense: expense, dateFormat: formatter).joined(separator: ",") +  "\n"
+        }
+        writeToFile(fromString: exportString, withName: getExportName(prefix: "export_", exportDate: exportDate))
+        UserDefaults.standard.set(exportDate, forKey: LAST_EXPORT_KEY)
+        updateLabels()
     }
     
     @IBAction func exportAll(_ sender: Any) {
         var exportString = ""
+        let exportDate = Date()
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         
         for expense in appDelegate.expenseRessource.getList() {
             exportString += CSVColumns(fromExpense: expense, dateFormat: formatter).joined(separator: ",") +  "\n"
         }
-        writeToFile(fromString: exportString)
-        lastExportLabel?.text = formatter.string(from: Date())
+        writeToFile(fromString: exportString, withName: getExportName(prefix: "export_all_", exportDate: exportDate))
+        UserDefaults.standard.set(exportDate, forKey: LAST_EXPORT_KEY)
+        updateLabels()
     }
     
     private func CSVColumns( fromExpense: Expense, dateFormat: DateFormatter ) -> [String] {
@@ -55,10 +71,17 @@ class ExportViewController: UIViewController, MFMailComposeViewControllerDelegat
         ]
     }
     
-    private func writeToFile( fromString: String ) {
+    private func getExportName( prefix: String, exportDate: Date ) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMddHHmmss"
+        return prefix + formatter.string(from: exportDate) + ".csv"
+        
+    }
+    
+    private func writeToFile( fromString: String, withName: String ) {
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             
-            let path = dir.appendingPathComponent("export.csv")
+            let path = dir.appendingPathComponent(withName)
             
             // For debugging and finding it in simulator
             print("saving to \(path)")
@@ -81,13 +104,40 @@ class ExportViewController: UIViewController, MFMailComposeViewControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        updateLabels()
 
         // Do any additional setup after loading the view.
     }
+    
+    private func updateLabels() {
+        let lastExport:Date? = UserDefaults.standard.object(forKey: LAST_EXPORT_KEY) as? Date
+        
+        if lastExport != nil {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .short
+            formatter.timeStyle = .short
+            lastExportLabel.text = formatter.string(from: lastExport!)
+        } else {
+            lastExportLabel.text = "Never"
+        }
+        
+        allExpensesCountLabel.text = String(appDelegate.expenseRessource.getCount())
+        if lastExport == nil {
+           newExpensesCountLabel.text = String(appDelegate.expenseRessource.getCount())
+        } else {
+            newExpensesCountLabel.text = String(appDelegate.expenseRessource.getCount(startDate: lastExport!))
+        }
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        updateLabels()
     }
     
 

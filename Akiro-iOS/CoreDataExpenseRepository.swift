@@ -21,6 +21,12 @@ struct CoreDataExpenseResource: ExpenseResource {
         let context = persistentContainer.viewContext
         let expense = NSEntityDescription.insertNewObject(forEntityName: "Expense", into: context) as! Expense
         
+        return update(expense: expense, amount: amount, category: category, date: date, payee: payee, memo: memo)
+    }
+    
+    func update(expense: Expense, amount:Float, category: Category, date: Date, payee: Payee?, memo: String?) -> Expense {
+        let context = persistentContainer.viewContext
+        
         expense.amount = amount
         expense.category = category
         expense.date = date as NSDate?

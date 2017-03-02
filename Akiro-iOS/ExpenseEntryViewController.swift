@@ -11,8 +11,29 @@ import UIKit
 class ExpenseEntryViewController: UITableViewController, PayeeSelectionDelegate, CategorySelectionDelegate, DateSelectionDelegate {
 
     private var amount: Float = 0.0
-    private var category: Category?
-    private var payee: Payee?
+    private var category: Category? {
+        didSet {
+            if category == nil {
+                selectedCategoryLabel.textColor =  #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+                selectedCategoryLabel.text = "Select category"
+            } else {
+                selectedCategoryLabel.textColor =  #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                selectedCategoryLabel.text = category!.name
+            }
+        }
+    }
+    private var payee: Payee? {
+        didSet {
+            if payee == nil {
+                selectedPayeeLabel.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+                selectedPayeeLabel.text = "Select payee"
+            } else {
+                selectedPayeeLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                selectedPayeeLabel.text = payee!.name
+            }
+            
+        }
+    }
     private var memo: String?
     private var dateEntered: Date? {
         didSet {
@@ -25,32 +46,57 @@ class ExpenseEntryViewController: UITableViewController, PayeeSelectionDelegate,
         }
     }
     
+    var editExpense: Expense?
+    
     var delegate: ExpenseDelegate?
 
     @IBAction func amountEntered(_ sender: UITextField) {
         if let textEntered = sender.text, let convertedAmount = Float(textEntered.replacingOccurrences(of: ",", with: ".")) { // Crude float conversion for german numbers until we have fancy amount input
             amount = convertedAmount
+            editExpense?.amount = convertedAmount
         }
     }
     
     @IBAction func saveTouched(_ sender: Any) {
-        if amount > 0 && category != nil && dateEntered != nil {
+        if amount == 0.0 {
+            flashInvalidField(view: amountField.superview)
+            return
+        }
+        
+        if category == nil  {
+            flashInvalidField(view: selectedCategoryLabel.superview )
+            return
+        }
+        
+        if dateEntered == nil {
+            flashInvalidField(view: selectedPayeeLabel.superview)
+            return
+        }
+        
+        
+        if editExpense == nil {
             delegate?.addExpense(amount: -amount, category: category!, date: dateEntered!, payee: payee, memo: memo)
-            let _ = navigationController?.popViewController(animated: true)
         } else {
-            guard let button = self.saveButton else {
-                return;
-            }
+            delegate?.updateExpense(amount: -amount, category: category!, date: dateEntered!, payee: payee, memo: memo)
+        }
+        
+        let _ = navigationController?.popViewController(animated: true)
+    }
+    
+    private func flashInvalidField( view: UIView? ) {
+        if view == nil {
+            return
+        }
+        UIView.animate(withDuration: 1) {
+            let oldColor = view!.backgroundColor
+            view!.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
             UIView.animate(withDuration: 1) {
-                let oldColor = button.backgroundColor
-                button.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
-                UIView.animate(withDuration: 1) {
-                    button.backgroundColor = oldColor
-                }
+                view!.backgroundColor = oldColor
             }
         }
     }
     
+    @IBOutlet weak var amountField: UITextField!
     @IBOutlet weak var selectedCategoryLabel: UILabel!
     @IBOutlet weak var selectedPayeeLabel: UILabel!
     @IBOutlet weak var selectedDateLabel: UILabel!
@@ -64,12 +110,35 @@ class ExpenseEntryViewController: UITableViewController, PayeeSelectionDelegate,
         selectedCategoryLabel.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         
         dateEntered = Date()
+        
+        updateFields()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        updateFields()
+    }
+    
+    private func updateFields() {
+        if editExpense == nil {
+            return
+        }
+        
+        if editExpense!.date != nil {
+            dateEntered = (editExpense!.date as! Date)
+        }
+        
+        amountField?.text = String(editExpense!.amount * -1)
+        category = editExpense!.category
+        payee = editExpense!.payee
+        amount = editExpense!.amount
+        memo = editExpense!.memo
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,20 +151,19 @@ class ExpenseEntryViewController: UITableViewController, PayeeSelectionDelegate,
     func payeeWasSelected(_ selectedPayee: Payee) {
         // TODO unset payee when the same one is selected
         payee = selectedPayee
-        selectedPayeeLabel.text = selectedPayee.name
-        selectedPayeeLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        editExpense?.payee = selectedPayee
+        
     }
     
     func categoryWasSelected(_ selectedCategory: Category) {
         category = selectedCategory
-        selectedCategoryLabel.text = selectedCategory.name
-        selectedCategoryLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        editExpense?.category = selectedCategory
     }
     
     func dateWasSelected(_ selectedDate: Date) {
         dateEntered = selectedDate
+        editExpense?.date = selectedDate as NSDate?
     }
-    
     
     // MARK: - Navigation
     

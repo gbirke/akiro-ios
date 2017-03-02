@@ -17,6 +17,9 @@ class ExpenseListViewController: UITableViewController, ExpenseDelegate {
             tableView.reloadData()
         }
     }
+    
+    var expenseToBeUpdated: Expense?
+    var rowToBeUpdated: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +47,6 @@ class ExpenseListViewController: UITableViewController, ExpenseDelegate {
         return expenses.count
     }
     
-
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "expenseCell", for: indexPath) as! ExpenseViewCell
 
@@ -54,13 +55,24 @@ class ExpenseListViewController: UITableViewController, ExpenseDelegate {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        expenseToBeUpdated = expenses[indexPath.row]
+        rowToBeUpdated = indexPath.row
+        self.performSegue(withIdentifier: "editExpense", sender: self)
+    }
+    
     func addExpense( amount:Float, category: Category, date: Date, payee: Payee?, memo: String? ) {
         let newExpense = appDelegate.expenseRessource.insert(amount: amount, category: category, date: date, payee: payee, memo: memo)
         expenses.insert(newExpense, at: 0)
         let _ = navigationController?.popViewController(animated: true)
     }
     
-
+    func updateExpense( amount: Float, category: Category, date: Date, payee: Payee?, memo: String? ) {
+        let expense = appDelegate.expenseRessource.update(expense: expenseToBeUpdated!, amount: amount, category: category, date: date, payee: payee, memo: memo )
+        expenses[rowToBeUpdated!] = expense
+        let _ = navigationController?.popViewController(animated: true)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -104,7 +116,15 @@ class ExpenseListViewController: UITableViewController, ExpenseDelegate {
         if segue.identifier == "addExpense" {
             let dst = segue.destination as! ExpenseEntryViewController
             dst.delegate = self
+            dst.editExpense = nil
         }
+        
+        if segue.identifier == "editExpense" {
+            let dst = segue.destination as! ExpenseEntryViewController
+            dst.delegate = self
+            dst.editExpense = expenseToBeUpdated
+        }
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

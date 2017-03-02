@@ -1,7 +1,8 @@
 # Next steps for the minimum viable product
 
 ## Edit expense
-- Show pre-filled expense form when touching expense entries
+- Change relationship to 1:n
+- Fix amounts - amount is always positive, add expense types for income and expense
 
 ## Fast entry 
 - Use last used category value when payee is selected
@@ -25,6 +26,7 @@
 - Add alphabetic section headers in payee selection if no search is done
 - Send CSV export via mail
 - Put CSV in Dropbox instead of storing it as document
+- Delete Payees
 
 ## Far future development
 - Budgeting

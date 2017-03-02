@@ -14,5 +14,6 @@ protocol ExpenseResource {
     func getCount() -> Int
     func getCount(startDate: Date) -> Int
     func insert(amount:Float, category: Category, date: Date, payee: Payee?, memo: String?) -> Expense
+    func update(expense: Expense, amount:Float, category: Category, date: Date, payee: Payee?, memo: String?) -> Expense
 }
 

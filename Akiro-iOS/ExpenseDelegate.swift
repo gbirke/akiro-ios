@@ -10,4 +10,5 @@ import Foundation
 
 protocol ExpenseDelegate {
     func addExpense( amount:Float, category: Category, date: Date, payee: Payee?, memo: String? )
+    func updateExpense( amount:Float, category: Category, date: Date, payee: Payee?, memo: String? )
 }

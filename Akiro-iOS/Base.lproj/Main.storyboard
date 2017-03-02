@@ -296,6 +296,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="47Q-Nx-01I" kind="show" identifier="editExpense" id="Zbi-TG-L05"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -487,6 +490,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="amountField" destination="nOW-mp-DrT" id="wVa-oO-LrP"/>
                         <outlet property="saveButton" destination="5gO-MN-q7d" id="2ht-hk-j5l"/>
                         <outlet property="selectedCategoryLabel" destination="R0a-kY-wHl" id="MxX-TP-i6a"/>
                         <outlet property="selectedDateLabel" destination="wVJ-s5-KWQ" id="0Bk-Fi-zGQ"/>
@@ -517,4 +521,7 @@
             <point key="canvasLocation" x="-9.375" y="1466.1971830985915"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Zbi-TG-L05"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -2,7 +2,7 @@
 //  Category+CoreDataProperties.swift
 //  Akiro-iOS
 //
-//  Created by Gabriel Birke on 27.02.17.
+//  Created by Gabriel Birke on 02.03.17.
 //  Copyright © 2017 Gabriel Birke. All rights reserved.
 //
 
@@ -19,6 +19,23 @@ extension Category {
     @NSManaged public var name: String?
     @NSManaged public var parent: String?
     @NSManaged public var sortId: Int16
-    @NSManaged public var expenses: Expense?
+    @NSManaged public var expenses: NSSet?
+
+}
+
+// MARK: Generated accessors for expenses
+extension Category {
+
+    @objc(addExpensesObject:)
+    @NSManaged public func addToExpenses(_ value: Expense)
+
+    @objc(removeExpensesObject:)
+    @NSManaged public func removeFromExpenses(_ value: Expense)
+
+    @objc(addExpenses:)
+    @NSManaged public func addToExpenses(_ values: NSSet)
+
+    @objc(removeExpenses:)
+    @NSManaged public func removeFromExpenses(_ values: NSSet)
 
 }

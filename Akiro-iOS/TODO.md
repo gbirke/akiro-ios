@@ -1,12 +1,8 @@
 # Next steps for the minimum viable product
 
-## Edit expense
-- Change relationship to 1:n
-- Fix amounts - amount is always positive, add expense types for income and expense
-
 ## Fast entry 
 - Use last used category value when payee is selected
-- Fancy amount input
+- Fancy amount input with distinction between income and expense
 
 ## Use GPS
 - Add GPS entries for each payee
@@ -22,6 +18,7 @@
 - Icon for adding expenses
 
 # Future developments
+- Show date section headers in expense list
 - Add accounts - Cash, BTC, etc.
 - Add alphabetic section headers in payee selection if no search is done
 - Send CSV export via mail

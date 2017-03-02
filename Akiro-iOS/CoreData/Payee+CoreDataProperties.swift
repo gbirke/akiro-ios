@@ -2,7 +2,7 @@
 //  Payee+CoreDataProperties.swift
 //  Akiro-iOS
 //
-//  Created by Gabriel Birke on 26.02.17.
+//  Created by Gabriel Birke on 02.03.17.
 //  Copyright © 2017 Gabriel Birke. All rights reserved.
 //
 
@@ -17,6 +17,23 @@ extension Payee {
     }
 
     @NSManaged public var name: String?
-    @NSManaged public var expenses: Expense?
+    @NSManaged public var expenses: NSSet?
+
+}
+
+// MARK: Generated accessors for expenses
+extension Payee {
+
+    @objc(addExpensesObject:)
+    @NSManaged public func addToExpenses(_ value: Expense)
+
+    @objc(removeExpensesObject:)
+    @NSManaged public func removeFromExpenses(_ value: Expense)
+
+    @objc(addExpenses:)
+    @NSManaged public func addToExpenses(_ values: NSSet)
+
+    @objc(removeExpenses:)
+    @NSManaged public func removeFromExpenses(_ values: NSSet)
 
 }

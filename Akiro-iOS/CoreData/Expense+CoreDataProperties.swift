@@ -2,7 +2,7 @@
 //  Expense+CoreDataProperties.swift
 //  Akiro-iOS
 //
-//  Created by Gabriel Birke on 27.02.17.
+//  Created by Gabriel Birke on 02.03.17.
 //  Copyright © 2017 Gabriel Birke. All rights reserved.
 //
 

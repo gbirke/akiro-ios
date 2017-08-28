@@ -1,7 +1,6 @@
 # Next steps for the minimum viable product
 
 ## Fast entry 
-- Use last used category value when payee is selected
 - Fancy amount input with distinction between income and expense
 
 ## Use GPS
@@ -11,11 +10,14 @@
 
 ## Add necessary images
 - App icon
-- Icons for tabs
+- Icons for tabs 
+    - https://thenounproject.com/search/?q=export&i=976566 for exporting
+    - https://thenounproject.com/search/?similar=41949&i=417253 for expenses
 
 # Planned design improvements
-- Consistent color scheme
 - Icon for adding expenses
+- Big button at the bottom of the expense list for adding a new expense
+- Consistent color scheme
 
 # Future developments
 - Show date section headers in expense list
@@ -26,4 +28,7 @@
 - Delete Payees
 
 ## Far future development
+- Publish in App Store
 - Budgeting
+- Encrypted Sync
+

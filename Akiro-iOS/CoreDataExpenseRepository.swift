@@ -71,6 +71,22 @@ struct CoreDataExpenseResource: ExpenseResource {
         return expenses
     }
     
+    func getFirstByPayee(payee: Payee) -> Expense? {
+        var expenses: [Expense] = []
+        let request: NSFetchRequest<Expense> = Expense.fetchRequest()
+        
+        request.fetchLimit = 1;
+        request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+        request.predicate = NSPredicate(format: "payee = %@", payee)
+        do {
+            try expenses = persistentContainer.viewContext.fetch(request)
+        } catch {
+            let nserror = error as NSError
+            print("Database query error: \(nserror.localizedDescription)")
+        }
+        return expenses.first
+    }
+    
     func getCount() -> Int {
         let request: NSFetchRequest<Expense> = Expense.fetchRequest()
         do {

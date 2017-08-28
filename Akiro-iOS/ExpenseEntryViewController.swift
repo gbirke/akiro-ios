@@ -49,6 +49,8 @@ class ExpenseEntryViewController: UITableViewController, PayeeSelectionDelegate,
     var editExpense: Expense?
     
     var delegate: ExpenseDelegate?
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     @IBAction func amountEntered(_ sender: UITextField) {
         if let textEntered = sender.text, let convertedAmount = Float(textEntered.replacingOccurrences(of: ",", with: ".")) { // Crude float conversion for german numbers until we have fancy amount input
@@ -124,6 +126,7 @@ class ExpenseEntryViewController: UITableViewController, PayeeSelectionDelegate,
         updateFields()
     }
     
+    // Initialize properties that hold the expense-related objects from the editExpense
     private func updateFields() {
         if editExpense == nil {
             return
@@ -153,6 +156,19 @@ class ExpenseEntryViewController: UITableViewController, PayeeSelectionDelegate,
         payee = selectedPayee
         editExpense?.payee = selectedPayee
         
+        initializeCategoryForPayee(payee: selectedPayee)
+    }
+    
+    private func initializeCategoryForPayee( payee: Payee ) {
+        if category != nil {
+            return
+        }
+        let lastExpenseWithThatPayee = appDelegate.expenseRessource.getFirstByPayee(payee: payee)
+        if lastExpenseWithThatPayee == nil {
+            return
+        }
+        category = lastExpenseWithThatPayee?.category
+        editExpense?.category = lastExpenseWithThatPayee?.category
     }
     
     func categoryWasSelected(_ selectedCategory: Category) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2634E0FE1F555DFB0058271E /* AmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2634E0FD1F555DFB0058271E /* AmountViewController.swift */; };
 		265441651E6094DB003488C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265441641E6094DB003488C1 /* AppDelegate.swift */; };
 		2654416A1E6094DB003488C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 265441681E6094DB003488C1 /* Main.storyboard */; };
 		2654416C1E6094DB003488C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2654416B1E6094DB003488C1 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2634E0FD1F555DFB0058271E /* AmountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountViewController.swift; sourceTree = "<group>"; };
 		265441611E6094DB003488C1 /* Akiro-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Akiro-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		265441641E6094DB003488C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		265441691E6094DB003488C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				265441941E61EB41003488C1 /* CategoryViewController.swift */,
 				265441961E6207AE003488C1 /* CategorySelectionDelegate.swift */,
 				2654419C1E6218AB003488C1 /* ExpenseListViewController.swift */,
+				2634E0FD1F555DFB0058271E /* AmountViewController.swift */,
 				265441A21E62E16A003488C1 /* ExpenseEntryViewController.swift */,
 				265441A41E6329E9003488C1 /* DateSelectionViewController.swift */,
 				265441A61E632C24003488C1 /* DateSelectionDelegate.swift */,
@@ -294,6 +297,7 @@
 				265441971E6207AE003488C1 /* CategorySelectionDelegate.swift in Sources */,
 				265441811E61A73E003488C1 /* PayeeViewController.swift in Sources */,
 				2654418B1E61D8D1003488C1 /* PayeeSelectionDelegate.swift in Sources */,
+				2634E0FE1F555DFB0058271E /* AmountViewController.swift in Sources */,
 				269045D21E65EDD1006148B3 /* ExportViewController.swift in Sources */,
 				2682971F1E6394E000FC95F4 /* Payee+CoreDataProperties.swift in Sources */,
 				265441951E61EB41003488C1 /* CategoryViewController.swift in Sources */,

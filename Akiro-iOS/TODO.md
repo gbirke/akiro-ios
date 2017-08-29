@@ -2,6 +2,13 @@
 
 ## Fast entry 
 - Fancy amount input with distinction between income and expense
+    - Implement Income/Expense modes
+    - Connect "Next" button to ExpenseEntryViewController (and its amount field)
+    - Make "Amount" row taps in ExpenseEntryViewController show AmountViewController (with correct behavior for back/next) 
+
+## Misc
+- Convert amount to Decimal instead of Float
+- Title for ExpenseEntryView
 
 ## Use GPS
 - Add GPS entries for each payee

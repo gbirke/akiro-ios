@@ -114,7 +114,7 @@ class ExpenseListViewController: UITableViewController, ExpenseDelegate {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addExpense" {
-            let dst = segue.destination as! ExpenseEntryViewController
+            let dst = segue.destination as! AmountViewController
             dst.delegate = self
             dst.editExpense = nil
         }
@@ -124,9 +124,6 @@ class ExpenseListViewController: UITableViewController, ExpenseDelegate {
             dst.delegate = self
             dst.editExpense = expenseToBeUpdated
         }
-        
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
     
 

@@ -2,9 +2,8 @@
 
 ## Fast entry 
 - Fancy amount input with distinction between income and expense
-    - Implement Income/Expense modes
-    - Connect "Next" button to ExpenseEntryViewController (and its amount field)
-    - Make "Amount" row taps in ExpenseEntryViewController show AmountViewController (with correct behavior for back/next) 
+    - Make nested controllers: ExpenseEntry as the parent controller with an amount label, beneath it a container for amountEntry and expenseDetails. When editing an entry, show expenseDetails, otherwise show amount entry. See https://stackoverflow.com/questions/17499391/ios-nested-view-controllers-view-inside-uiviewcontrollers-view and https://developer.apple.com/library/content/featuredarticles/ViewControllerPGforiPhoneOS/ImplementingaContainerViewController.html
+    
 
 ## Misc
 - Convert amount to Decimal instead of Float
@@ -24,7 +23,8 @@
 # Planned design improvements
 - Icon for adding expenses
 - Big button at the bottom of the expense list for adding a new expense
-- Consistent color scheme
+- Consistent and prettier color scheme
+- Better indicator of which mode (expense/income) is currently active in amount view
 
 # Future developments
 - Show date section headers in expense list

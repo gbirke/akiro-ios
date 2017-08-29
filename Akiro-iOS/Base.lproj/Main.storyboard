@@ -86,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GhY-fF-JZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3050.625" y="118.30985915492958"/>
+            <point key="canvasLocation" x="4035" y="104"/>
         </scene>
         <!--Select Category-->
         <scene sceneID="Vbt-5o-VGM">
@@ -115,7 +115,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JlB-4E-UXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3038" y="806"/>
+            <point key="canvasLocation" x="4035" y="806"/>
         </scene>
         <!--Export View Controller-->
         <scene sceneID="9qZ-oX-i8c">
@@ -240,7 +240,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJb-EP-CrP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="988.125" y="1466.1971830985915"/>
+            <point key="canvasLocation" x="1429" y="1769"/>
         </scene>
         <!--Add Expense-->
         <scene sceneID="ehp-Q8-a2V">
@@ -438,6 +438,9 @@
                                                 <state key="normal" title="Next">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="47Q-Nx-01I" kind="show" identifier="enterExpenseData" id="QTe-rD-H67"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -461,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cD7-Gu-Vi9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1946.25" y="1569.7183098591549"/>
+            <point key="canvasLocation" x="2333" y="831"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="avq-xV-YZG">
@@ -530,7 +533,7 @@
                     <navigationItem key="navigationItem" id="j2b-LH-ioy">
                         <barButtonItem key="rightBarButtonItem" title="+" id="C5C-dz-BzI">
                             <connections>
-                                <segue destination="4r9-td-0jG" kind="show" id="TLh-6N-bkA"/>
+                                <segue destination="4r9-td-0jG" kind="show" identifier="addExpense" id="TLh-6N-bkA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -567,18 +570,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V29-qX-Y7x" id="9Hd-0j-m0i">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0,00" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nOW-mp-DrT">
-                                                    <rect key="frame" x="112" y="6" width="200" height="30"/>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                                    <connections>
-                                                        <action selector="amountEntered:" destination="47Q-Nx-01I" eventType="editingDidEnd" id="dGb-YA-N89"/>
-                                                    </connections>
-                                                </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAX-0P-Ayh">
                                                     <rect key="frame" x="18" y="11" width="80" height="21"/>
                                                     <constraints>
@@ -588,14 +582,19 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0,00 €" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a39-AU-Szs">
+                                                    <rect key="frame" x="114" y="11" width="200" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="nOW-mp-DrT" firstAttribute="leading" secondItem="nAX-0P-Ayh" secondAttribute="trailing" constant="14" id="Ka1-TK-AQo"/>
-                                                <constraint firstItem="nOW-mp-DrT" firstAttribute="centerY" secondItem="nAX-0P-Ayh" secondAttribute="centerY" id="W8w-Eh-fD9"/>
-                                                <constraint firstItem="nOW-mp-DrT" firstAttribute="centerY" secondItem="9Hd-0j-m0i" secondAttribute="centerY" id="WzC-LV-Y8R"/>
                                                 <constraint firstItem="nAX-0P-Ayh" firstAttribute="leading" secondItem="9Hd-0j-m0i" secondAttribute="leadingMargin" constant="10" id="aXI-jc-3Ia"/>
-                                                <constraint firstItem="nOW-mp-DrT" firstAttribute="trailing" secondItem="9Hd-0j-m0i" secondAttribute="trailingMargin" id="gBe-DY-pPR"/>
-                                                <constraint firstItem="nOW-mp-DrT" firstAttribute="top" secondItem="9Hd-0j-m0i" secondAttribute="topMargin" constant="-2" id="hqz-lR-m9q"/>
+                                                <constraint firstItem="a39-AU-Szs" firstAttribute="leading" secondItem="nAX-0P-Ayh" secondAttribute="trailing" constant="36" id="b3L-z0-NYy"/>
+                                                <constraint firstItem="nAX-0P-Ayh" firstAttribute="baseline" secondItem="a39-AU-Szs" secondAttribute="baseline" id="jQd-gh-VN9"/>
+                                                <constraint firstItem="nAX-0P-Ayh" firstAttribute="centerY" secondItem="9Hd-0j-m0i" secondAttribute="centerY" id="qBZ-0X-XJY"/>
+                                                <constraint firstItem="a39-AU-Szs" firstAttribute="trailing" secondItem="9Hd-0j-m0i" secondAttribute="trailingMargin" id="r7I-TM-VN5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -711,7 +710,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="amountField" destination="nOW-mp-DrT" id="wVa-oO-LrP"/>
+                        <outlet property="amountField" destination="a39-AU-Szs" id="xCR-qY-vGf"/>
                         <outlet property="saveButton" destination="5gO-MN-q7d" id="2ht-hk-j5l"/>
                         <outlet property="selectedCategoryLabel" destination="R0a-kY-wHl" id="MxX-TP-i6a"/>
                         <outlet property="selectedDateLabel" destination="wVJ-s5-KWQ" id="0Bk-Fi-zGQ"/>
@@ -720,7 +719,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u5d-HT-j4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2190" y="806"/>
+            <point key="canvasLocation" x="3277" y="805"/>
         </scene>
         <!--Export-->
         <scene sceneID="IN3-WH-oTq">
@@ -739,7 +738,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpD-Cr-suY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9.375" y="1466.1971830985915"/>
+            <point key="canvasLocation" x="664" y="1770"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="QTe-rD-H67"/>
+    </inferredMetricsTieBreakers>
 </document>

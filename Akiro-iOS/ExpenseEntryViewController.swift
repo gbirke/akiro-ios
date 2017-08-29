@@ -8,9 +8,13 @@
 
 import UIKit
 
-class ExpenseEntryViewController: UITableViewController, PayeeSelectionDelegate, CategorySelectionDelegate, DateSelectionDelegate {
+class ExpenseEntryViewController: UITableViewController, PayeeSelectionDelegate, CategorySelectionDelegate, DateSelectionDelegate, AmountEntryDelegate {
 
-    private var amount: Float = 0.0
+    private var amount: Float = 0.0 {
+        didSet {
+            showAmount()
+        }
+    }
     private var category: Category? {
         didSet {
             if category == nil {
@@ -52,18 +56,8 @@ class ExpenseEntryViewController: UITableViewController, PayeeSelectionDelegate,
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
-    @IBAction func amountEntered(_ sender: UITextField) {
-        if let textEntered = sender.text, let convertedAmount = Float(textEntered.replacingOccurrences(of: ",", with: ".")) { // Crude float conversion for german numbers until we have fancy amount input
-            amount = convertedAmount
-            editExpense?.amount = convertedAmount
-        }
-    }
     
     @IBAction func saveTouched(_ sender: Any) {
-        if amount == 0.0 {
-            flashInvalidField(view: amountField.superview)
-            return
-        }
         
         if category == nil  {
             flashInvalidField(view: selectedCategoryLabel.superview )
@@ -98,7 +92,7 @@ class ExpenseEntryViewController: UITableViewController, PayeeSelectionDelegate,
         }
     }
     
-    @IBOutlet weak var amountField: UITextField!
+    @IBOutlet weak var amountField: UILabel!
     @IBOutlet weak var selectedCategoryLabel: UILabel!
     @IBOutlet weak var selectedPayeeLabel: UILabel!
     @IBOutlet weak var selectedDateLabel: UILabel!
@@ -113,6 +107,7 @@ class ExpenseEntryViewController: UITableViewController, PayeeSelectionDelegate,
         
         dateEntered = Date()
         
+        showAmount()
         updateFields()
 
         // Uncomment the following line to preserve selection between presentations
@@ -136,7 +131,6 @@ class ExpenseEntryViewController: UITableViewController, PayeeSelectionDelegate,
             dateEntered = (editExpense!.date as! Date)
         }
         
-        amountField?.text = String(editExpense!.amount * -1)
         category = editExpense!.category
         payee = editExpense!.payee
         amount = editExpense!.amount
@@ -150,6 +144,11 @@ class ExpenseEntryViewController: UITableViewController, PayeeSelectionDelegate,
     }
 
     // MARK: - Table view data source
+    
+    func amountWasEntered(_ amount: Float) {
+        print("amt entered")
+        self.amount = amount
+    }
 
     func payeeWasSelected(_ selectedPayee: Payee) {
         // TODO unset payee when the same one is selected
@@ -201,7 +200,15 @@ class ExpenseEntryViewController: UITableViewController, PayeeSelectionDelegate,
                 dst.startDate = dateEntered!
             }
         }
-        
+    }
+    
+    private func showAmount() {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
+        formatter.locale = Locale(identifier: Locale.current.identifier)
+        amountField?.text = formatter.string(from: NSNumber(value: amount))
     }
 
 }

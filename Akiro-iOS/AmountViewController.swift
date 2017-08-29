@@ -10,11 +10,16 @@ import UIKit
 
 class AmountViewController: UIViewController {
     
+    var delegate: ExpenseDelegate?
+    var amountDelegate: AmountEntryDelegate?
+    var editExpense: Expense?
+    
     let formatter = NumberFormatter()
     
     var amount = 0 {
         didSet {
             amountDisplay.text = formatter.string(from: NSNumber(value: Float(amount) / 100))
+            amountDelegate?.amountWasEntered(Float(amount) / 100)
         }
     };
     
@@ -47,10 +52,6 @@ class AmountViewController: UIViewController {
         amount = amount * 10 + button.tag
     }
     
-    @IBAction func deleteTapped(_ sender: Any) {
-        amount /= 10
-    }
-    
     @IBAction func expenseModeTapped(_ sender: Any) {
         expenseMode = true;
     }
@@ -58,28 +59,37 @@ class AmountViewController: UIViewController {
         expenseMode = false;
     }
     
+    @IBAction func deleteTapped(_ sender: Any) {
+        amount /= 10
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         formatter.numberStyle = .currency
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
+        formatter.locale = Locale(identifier: Locale.current.identifier)
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "enterExpenseData" {
+            let dst = segue.destination as! ExpenseEntryViewController
+            dst.delegate = delegate
+            dst.editExpense = editExpense
+            dst.amountWasEntered(Float(amount) / 100)
+        }
     }
-    */
+    
 
 }

@@ -18,6 +18,7 @@ class ExpenseViewCell: UITableViewCell {
         format = NumberFormatter()
         format.numberStyle = .currency
         format.maximumFractionDigits = 2
+        format.minimumFractionDigits = 2
         format.locale = Locale(identifier: Locale.current.identifier)
         
         super.init(coder: aDecoder)

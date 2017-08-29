@@ -17,8 +17,28 @@ class AmountViewController: UIViewController {
             amountDisplay.text = formatter.string(from: NSNumber(value: Float(amount) / 100))
         }
     };
+    
+    var expenseMode = true {
+        didSet {
+            if expenseMode {
+                expenseModeButton.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+                expenseModeButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+                incomeModeButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                incomeModeButton.setTitleColor(#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1), for: .normal)
+                amountDisplay.textColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+            } else {
+                expenseModeButton.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                expenseModeButton.setTitleColor(#colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1), for: .normal)
+                incomeModeButton.backgroundColor = #colorLiteral(red: 0.5563425422, green: 0.9793455005, blue: 0, alpha: 1)
+                incomeModeButton.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+                amountDisplay.textColor = #colorLiteral(red: 0.5563425422, green: 0.9793455005, blue: 0, alpha: 1)
+            }
+        }
+    };
 
     @IBOutlet weak var amountDisplay: UILabel!
+    @IBOutlet weak var expenseModeButton: UIButton!
+    @IBOutlet weak var incomeModeButton: UIButton!
     
     @IBAction func numberTapped(_ sender: Any) {
         guard let button = sender as? UIButton else {
@@ -29,6 +49,13 @@ class AmountViewController: UIViewController {
     
     @IBAction func deleteTapped(_ sender: Any) {
         amount /= 10
+    }
+    
+    @IBAction func expenseModeTapped(_ sender: Any) {
+        expenseMode = true;
+    }
+    @IBAction func incomeModeTapped(_ sender: Any) {
+        expenseMode = false;
     }
     
     override func viewDidLoad() {

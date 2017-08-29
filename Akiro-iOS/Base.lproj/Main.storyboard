@@ -267,7 +267,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mZG-vL-SyZ">
                                         <rect key="frame" x="0.0" y="78.5" width="320" height="40"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L24-rG-UQ2">
+                                            <button opaque="NO" tag="-1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L24-rG-UQ2">
                                                 <rect key="frame" x="0.0" y="0.0" width="159" height="40"/>
                                                 <color key="backgroundColor" red="0.92549020049999997" green="0.23529411850000001" blue="0.1019607857" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -276,12 +276,19 @@
                                                 <state key="normal" title="Expense">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="expenseModeTapped:" destination="4r9-td-0jG" eventType="touchUpInside" id="6ZJ-RQ-Y5q"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SB5-dU-86H">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SB5-dU-86H">
                                                 <rect key="frame" x="161" y="0.0" width="159" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="Income">
-                                                    <color key="titleColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.34117648010000001" green="0.62352943419999995" blue="0.16862745579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="incomeModeTapped:" destination="4r9-td-0jG" eventType="touchUpInside" id="2Rn-e0-aTu"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -448,6 +455,8 @@
                     <navigationItem key="navigationItem" title="Add Expense" id="YMx-BX-wkN"/>
                     <connections>
                         <outlet property="amountDisplay" destination="YBg-98-Hga" id="sa6-wM-oEE"/>
+                        <outlet property="expenseModeButton" destination="L24-rG-UQ2" id="2vu-Yc-HiM"/>
+                        <outlet property="incomeModeButton" destination="SB5-dU-86H" id="UpH-Vz-RKg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cD7-Gu-Vi9" userLabel="First Responder" sceneMemberID="firstResponder"/>
